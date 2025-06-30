@@ -12,12 +12,12 @@ It uses **Retrieval-Augmented Generation (RAG)** by combining:
 
 ## 🚀 Features
 
-- 📥 Upload startup investment memos as PDFs
-- ✂️ Auto-summarize and store memos in ChromaDB
-- 📚 Retrieve relevant internal VC guidelines from MongoDB
-- 🧠 Evaluate memo fields using LLMs (e.g., Funding, MRR, Founder Info)
-- 🧾 Generate a structured PDF report with compliance explanations
-- 💬 Chatbot to answer policy/guideline questions from MongoDB
+- 📥 Upload startup investment memos as PDFs  
+- ✂️ Auto-summarize and store memos in ChromaDB  
+- 📚 Retrieve relevant VC guidelines from MongoDB  
+- 🧠 Evaluate memo fields using GPT (e.g., Funding, MRR, Team Info)  
+- 🧾 Generate a structured PDF report  
+- 💬 Interactive chatbot to query internal policies  
 
 ---
 
@@ -48,10 +48,13 @@ User Uploads Memo   ┌───────────────────
               │      (Downloadable PDF)    │
               └────────────────────────────┘
 
-+ Interactive chatbot (MongoDB vector search + GPT)
++ Interactive Chatbot (MongoDB vector search + GPT)
+```
 
+---
 
-#📂 Project Structure
+## 📂 Project Structure
+
 ```bash
 .
 ├── app.py                  # Streamlit main app
@@ -61,63 +64,118 @@ User Uploads Memo   ┌───────────────────
 ├── summarize_memo.py       # Memo summarizer and ChromaDB loader
 ├── report_utils.py         # PDF report generator
 ├── key_param.py            # Your API keys (do NOT share)
-├── requirements.txt        # Required dependencies
-├── chroma_db/              # Local ChromaDB storage for memos
-├── data/                   # Store guideline/memo PDFs
+├── requirements.txt        # Python dependencies
+├── chroma_db/              # ChromaDB local storage
+├── data/                   # Guideline and memo PDFs
 └── README.md
 ```
 
-#⚙️ Setup Instructions
-```bash
+---
 
-#1️⃣ Clone the Repository
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/your-username/rag-investment-evaluator.git
 cd rag-investment-evaluator
-
-#2️⃣ Install Dependencies
- Make sure you’re using Python 3.9+
-pip install -r requirements.txt
-
-#3️⃣ Set Up Your API Keys
- Create a key_param.py file:
 ```
 
+### 2️⃣ Install Dependencies
+
+Make sure Python 3.9+ is installed.
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3️⃣ Set Up Your API Keys
+
+Create a `key_param.py` file:
+
+```python
 # key_param.py
 MONGODB_URI = "your_mongodb_atlas_connection_string"
-OPENAI_API_KEY = "your_openai_key"
+OPENAI_API_KEY = "your_openai_api_key"
+```
 
-▶️ Running the App
+---
+
+## ▶️ Running the App
+
 ```bash
 streamlit run app.py
 ```
-The app will launch in your browser.
 
-#🧪 How It Works
+The app will open in your browser.
+
+---
+
+## 🧪 How It Works
+
+### 📝 Step 1: Load Guidelines (Run Once)
+
 ```bash
-
-📝 Step 1: Load Guidelines (Run Once)
 python load_guidelines.py
 ```
-This vectorizes and stores internal VC guidelines in MongoDB Atlas.
 
+This loads and vectorizes internal VC guidelines into MongoDB Atlas.
 
-#📄 Step 2: Upload Memo PDF
-1.Upload a startup investment memo via the app.
-2.The app will:
-  *Summarize the content
-  *Extract key fields
-  *Store in local ChromaDB
+---
 
+### 📄 Step 2: Upload Memo PDF via App
 
-#✅ Step 3: Evaluate Memo Fields
-1.For each field:
-  *Retrieve matching guidelines
-  *Use GPT to check compliance
-2.View/download structured PDF report
+- Upload your startup investment memo through the UI.
+- The app will:
+  - 🔍 Summarize the content  
+  - 🧠 Extract key fields (Funding, Sector, MRR, etc.)  
+  - 💾 Store content and metadata in ChromaDB  
 
-#💬 Step 4: Ask Policy Questions via Chatbot
-Ask questions like “What is the approval process ” or “What sectors are restricted?”
-The chatbot searches MongoDB guidelines and answers using GPT
+---
 
+### ✅ Step 3: Evaluate Memo Fields
 
+- For each extracted field:
+  - Retrieve relevant guidelines from MongoDB
+  - Use GPT to evaluate compliance
+- Download the final PDF evaluation report
 
+---
+
+### 💬 Step 4: Ask Policy Questions via Chatbot
+
+- Ask anything like:
+  - “What’s the funding limit?”
+  - “What sectors are restricted?”
+  - “What requires board approval?”
+- The chatbot uses MongoDB Atlas Vector Search + GPT to respond
+
+---
+
+## 📌 Dependencies
+
+```txt
+streamlit
+langchain
+langchain-community
+langchain-openai
+langchain-groq
+pymongo
+PyMuPDF
+fpdf
+```
+
+---
+
+## 📃 License
+
+MIT License — free for open-source and academic use.
+
+---
+
+## ✨ Author
+
+Built by [Your Name]  
+Inspired by the [RAG with MongoDB Course](https://www.mongodb.com/developer/courses/rag-langchain-openai/)
+
+> Empowering investors with AI-driven memo evaluation 🧠
