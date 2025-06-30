@@ -167,15 +167,12 @@ fpdf
 
 ---
 
-## 📃 License
 
-MIT License — free for open-source and academic use.
 
----
+## 📬 Contact
 
-## ✨ Author
+Built by [Akhileswari Pemmanaboina](mailto:akhileswari712@gmail.com)
 
-Built by [Your Name]  
-Inspired by the [RAG with MongoDB Course](https://www.mongodb.com/developer/courses/rag-langchain-openai/)
+Feel free to fork, improve, and contribute!
 
 > Empowering investors with AI-driven memo evaluation 🧠
