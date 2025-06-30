@@ -47,7 +47,7 @@ User Uploads Memo   ┌───────────────────
 + Integrated chatbot using MongoDB Vector Search
 
 
-🗂 Project Structure
+##🗂 Project Structure
 .
 ├── app.py                  # Main Streamlit app
 ├── chat_handler.py         # Chatbot backend logic
