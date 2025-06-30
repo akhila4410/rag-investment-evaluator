@@ -46,6 +46,7 @@ User Uploads Memo   ┌───────────────────
 
 + Integrated chatbot using MongoDB Vector Search
 
+---
 
 ##🗂 Project Structure
 .
