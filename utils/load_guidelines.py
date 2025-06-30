@@ -10,7 +10,7 @@ db_name = "investment_evaluator"
 collection_name = "guidelines"
 collection = client[db_name][collection_name]
 
-pdf_path = "/Users/akhileswaripemmanaboina/Desktop/INVESTMENT Evaluator/data/sample_guidelines.pdf"  # Replace with your actual path
+pdf_path = "sample_guidelines.pdf"  # Replace with your actual path
 loader = PyPDFLoader(pdf_path)
 pages = loader.load()
 
