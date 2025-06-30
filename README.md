@@ -75,7 +75,6 @@ The application includes a chatbot interface that allows users to ask **guidelin
 ## 📂 Project Structure
 
 ```bash
-```bash
 .
 ├── app.py                     # Streamlit main app
 ├── utils/
