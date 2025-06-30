@@ -75,18 +75,22 @@ The application includes a chatbot interface that allows users to ask **guidelin
 ## 📂 Project Structure
 
 ```bash
+```bash
 .
-├── app.py                  # Streamlit main app
-├── chat_handler.py         # Chatbot logic (guideline Q&A)
-├── evaluate_fields.py      # Memo field evaluator (LLM)
-├── load_guidelines.py      # Chunk & embed guidelines
-├── summarize_memo.py       # Memo summarizer and ChromaDB loader
-├── report_utils.py         # PDF report generator
-├── key_param.py            # Your API keys (do NOT share)
-├── requirements.txt        # Python dependencies
-├── chroma_db/              # ChromaDB local storage
-├── data/                   # Guideline and memo PDFs
-└── README.md
+├── app.py                     # Streamlit main app
+├── utils/
+│   ├── chat_handler.py        # Chatbot logic for answering guideline-related queries
+│   ├── evaluate_fields.py     # Field-level evaluator using GPT and retrieved guidelines
+│   ├── load_guidelines.py     # Loads and chunks guidelines PDF into MongoDB Atlas Vector Search
+│   ├── summarize_memo.py      # Summarizes uploaded memo and stores content in ChromaDB
+│   ├── report_utils.py        # PDF report generation logic
+├── key_param.py               # API keys (MongoDB URI, OpenAI Key)
+├── requirements.txt           # Required Python packages
+├── chroma_db/
+│   └── memo_chunks/           # ChromaDB local vector DB storage (SQLite format)
+├── data/                      # Uploaded guideline and memo PDFs
+│   └── .DS_Store              # MacOS file (can be ignored/deleted)
+├── README.md                  # Project documentation
 ```
 
 ---
