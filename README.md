@@ -181,7 +181,6 @@ streamlit
 langchain
 langchain-community
 langchain-openai
-langchain-groq
 pymongo
 PyMuPDF
 fpdf
