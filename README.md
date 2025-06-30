@@ -50,6 +50,25 @@ User Uploads Memo   ┌───────────────────
 
 + Interactive Chatbot (MongoDB vector search + GPT)
 ```
+---
+
+## 💡 How It Works – High-Level Overview
+
+🔹 **VC Guidelines Ingested and Embedded**  
+Internal venture capital guidelines are processed, chunked into meaningful sections, and embedded using vector representations. These embeddings are stored in **MongoDB Atlas Vector Search** to enable semantic retrieval.
+
+🔹 **Memo PDFs Uploaded and Analyzed**  
+Users can upload startup investment memos in PDF format. Each memo is automatically summarized, relevant fields (e.g., funding requested, MRR, sector) are extracted, and the content is stored in **ChromaDB** for local semantic indexing.
+
+🔹 **Field-by-Field Evaluation Using GPT**  
+For each extracted memo field, the system retrieves the most relevant policy segments from MongoDB Atlas. These are passed along with the memo values to **OpenAI GPT**, which performs a contextual evaluation — determining whether the memo complies with the firm’s investment criteria.
+
+🔹 **Automated PDF Report Generation**  
+The results of the evaluation are compiled into a professionally formatted **PDF report**, showing the actual field values, matched policy segments, and compliance explanations.
+
+🔹 **Interactive Policy Chatbot**  
+The application includes a chatbot interface that allows users to ask **guideline-related questions** (e.g., “What requires board approval?”). It uses **vector-based retrieval** from MongoDB to fetch the most relevant context and respond intelligently via GPT.
+
 
 ---
 
