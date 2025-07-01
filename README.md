@@ -136,7 +136,9 @@ The app will open in your browser.
 ## 🧪 How It Works
 
 ### 📝 Step 1: Load Guidelines (Run Once)
-
+Before running the load_guidelines.py script:
+  *Place your guideline or policy PDF in the data/ folder.
+  *Update the file path inside load_guidelines.py to match the PDF name.
 ```bash
 python load_guidelines.py
 ```
